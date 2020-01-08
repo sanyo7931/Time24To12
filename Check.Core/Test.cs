@@ -12,6 +12,7 @@ namespace Check.Core
         {
             int inputH;
             string[] inputArray;
+
             IChecker regex = new RegexCheck();
             Console.WriteLine("輸入24時制時間: ");
             string militaryTime = Console.ReadLine();

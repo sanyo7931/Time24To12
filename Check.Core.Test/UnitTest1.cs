@@ -16,12 +16,10 @@ namespace Check.Core.Test
             //期望值
             bool expected = true; 
 
-            // act
             // 實際結果
             bool actual = checker.MilitaryTimeToRegularTime(militaryTime);
 
             // assert
-            // 比對(請注意類型)
             Assert.AreEqual(expected, actual);
         }
 
@@ -35,12 +33,10 @@ namespace Check.Core.Test
             //期望值
             bool expected = false;
 
-            // act
             // 實際結果
             bool actual = checker.MilitaryTimeToRegularTime(militaryTime);
 
             // assert
-            // 比對(請注意類型)
             Assert.AreEqual(expected, actual);
         }
     }
