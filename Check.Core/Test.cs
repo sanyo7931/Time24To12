@@ -28,7 +28,7 @@ namespace Check.Core
                     }
                     else if (inputH == 12)
                     {
-                        Console.WriteLine("12:" + inputArray[1] + " PM");
+                        Console.WriteLine(inputH + ":" + inputArray[1] + " PM");
                     }
                     else if (inputH == 00)
                     {
