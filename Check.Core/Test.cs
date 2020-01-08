@@ -12,7 +12,7 @@ namespace Check.Core
         {
             int inputH;
             string[] inputArray;
-            RegexCheck regex = new RegexCheck();
+            IChecker regex = new RegexCheck();
             Console.WriteLine("輸入24時制時間: ");
             string militaryTime = Console.ReadLine();
             try
@@ -32,7 +32,7 @@ namespace Check.Core
                     }
                     else if (inputH == 00)
                     {
-                        Console.WriteLine("00:" + inputArray[1] + " AM");
+                        Console.WriteLine("12:" + inputArray[1] + " AM");
                     }
                     else
                     {
