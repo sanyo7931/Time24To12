@@ -11,13 +11,13 @@ namespace Check.Core.Test
         {
             // arrange
             IChecker checker = new RegexCheck();
-            string militaryTime = "12:22";
+            string militaryTime = "00:00";
 
             //期望值
-            bool expected = true; 
+            string expected = "12:00 AM"; 
 
             // 實際結果
-            bool actual = checker.MilitaryTimeToRegularTime(militaryTime);
+            string actual = checker.MilitaryTimeToRegularTime(militaryTime);
 
             // assert
             Assert.AreEqual(expected, actual);
@@ -31,10 +31,10 @@ namespace Check.Core.Test
             string militaryTime = "25:22";
 
             //期望值
-            bool expected = false;
+            string expected = "Error";
 
             // 實際結果
-            bool actual = checker.MilitaryTimeToRegularTime(militaryTime);
+            string actual = checker.MilitaryTimeToRegularTime(militaryTime);
 
             // assert
             Assert.AreEqual(expected, actual);
