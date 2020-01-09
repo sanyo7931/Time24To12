@@ -8,6 +8,6 @@ namespace Check.Core
 {
     public interface IChecker
     {
-        bool MilitaryTimeToRegularTime(string militaryTime);
+        string MilitaryTimeToRegularTime(string militaryTime);
     }
 }
