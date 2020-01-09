@@ -14,10 +14,10 @@ namespace Check.Core.Test
             string militaryTime = "00:00";
 
             //期望值
-            string expected = "12:00 AM"; 
+            String expected = "12:00 AM";
 
             // 實際結果
-            string actual = checker.MilitaryTimeToRegularTime(militaryTime);
+            String actual = checker.MilitaryTimeToRegularTime(militaryTime);
 
             // assert
             Assert.AreEqual(expected, actual);
@@ -28,7 +28,7 @@ namespace Check.Core.Test
         {
             // arrange
             IChecker checker = new RegexCheck();
-            string militaryTime = "25:22";
+            string militaryTime = "2!:22";
 
             //期望值
             string expected = "Error";

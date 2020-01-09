@@ -9,20 +9,47 @@ namespace Check.Core
 {
     public class RegexCheck : IChecker
     {
-        public bool MilitaryTimeToRegularTime(string militaryTime)
+        public String MilitaryTimeToRegularTime(string militaryTime)
         {
+            int inputH;
+            string[] inputArray;
+            Regex regex = new Regex(@"^([0-1][0-9]|20|21|22|23)\:[0-5][0-9]$");
+
             bool result = false;
             try
             {
-                Regex regex = new Regex(@"^([0-1][0-9]|20|21|22|23)\:[0-5][0-9]$");
-
-                return regex.IsMatch(militaryTime);
+                result = regex.IsMatch(militaryTime);
+                if (result)
+                {
+                    inputArray = militaryTime.Split(':');
+                    inputH = Convert.ToInt32(inputArray[0]);
+                    if (inputH > 12)
+                    {
+                        inputH -= 12;
+                        return (inputH + ":" + inputArray[1] + " PM");
+                    }
+                    else if (inputH == 12)
+                    {
+                        return (inputH + ":" + inputArray[1] + " PM");
+                    }
+                    else if (inputH == 00)
+                    {
+                        return ("12:" + inputArray[1] + " AM");
+                    }
+                    else
+                    {
+                        return (inputH + ":" + inputArray[1] + " AM");
+                    }
+                }
+                else
+                {
+                    return ("Error");
+                }
             }
-            catch(Exception exp)
+            catch (Exception ex)
             {
-                Console.WriteLine(exp.ToString());
+                return (ex.ToString());
             }
-            return result;
         }
     }
 
